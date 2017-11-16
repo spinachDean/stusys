@@ -1,0 +1,24 @@
+*{margin: 0;padding: 0;font-size: 1em;}
+#framework{height: 100%;}
+#top{height: 10%;width: 95%;background-color: #FFFFFF;margin-top: 2%;margin-left: 2.5%;}
+	#top span{margin-left: 3%;font-size: 20px;font-family: 仿宋;padding-top: 1%;display: block;font-weight: bold;}
+	#top hr{border-top:5px solid #8EE5EE;margin-top: 1%;}
+
+#details{width: 95%;height: 80%;background-color: #FFFFFF;margin-top: 1%;margin-left: 2.5%;overflow-y: scroll;}
+#details_table{border-bottom: 1px solid black;border-right: 1px solid black;width: 90%;height: 100%;text-align: center;margin-left: 5%;table-layout: fixed;word-break: break-all;}
+	#details_table th{background-color: #F2F2F2;}
+	#details_table tr{height: 50px;}
+	.table_box{height: 100px !important;}
+	#details_table td,th{border-top: 1px solid black;border-left: 1px solid black;}
+.edit{width: 80px;height: 30px;text-align: center;border-radius: 5px;background-color: #D6D6D6;position: relative;left: 33%;top: 20px;cursor: pointer;}
+.edit:hover{background-color: #BABABA;}
+	.edit img{width: 28%;height: auto;margin-top: 3px;float: left;margin-left: 7px;}
+	.edit span{line-height: 30px;height: 30px;}
+
+#edit_modal{width: 100%;height: 100%;z-index: 999;position: absolute;top: 0;left: 0;background: rgba(240,240,240,0.9);display: none;}
+#modal_content{width: 70%;height: 85%;background-color: #FFFFFF;margin-left: 15%;margin-top: 3%;border-radius: 10px;}
+	#modal_content textarea{border: 1px solid #000000;width: 90%;height: 70%;max-width: 90%;max-height: 75%;margin-left: 5%;margin-top: 5%}
+	#modal_content input{background-color: #FFA500;width: 88px;height: 28px;border-radius: 5px;margin-top: 15px;margin-left: 43%;outline: none;}
+	#modal_content input:hover{background-color: #ff8c00;cursor: pointer;}
+	#modal_content h1{margin-left: 40%;top: 20px;position: relative;font-size: 1.5em;display: inline-block;}
+	#modal_content img{position: absolute;top: 0;right: 0;cursor: pointer;}

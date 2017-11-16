@@ -1,0 +1,22 @@
+*{margin: 0;padding: 0;font-size: 1em;}
+#framework{height: 100%;}
+#competeContent{height: 80%;width: 88%;position: absolute;right: 0;top: 8%;left: 150px;background-color: #F4F4F4;border-left: 1px solid #CFCFCF;}
+#competeTop{height: 10%;width: 95%;background-color: #FFFFFF;margin-top: 2%;margin-left: 2.5%;}
+	#competeTop span{margin-left: 3%;font-size: 20px;font-family: 仿宋;padding-top: 1%;display: block;font-weight: bold;}
+	#competeTop hr{border-top:5px solid #8EE5EE;margin-top: 1%;}
+#messageContent{width: 95%;height: 80%;margin-top: 1.5%;margin-left: 2.5%;background-color: #ffffff;}
+	#messageContent ul{list-style: none;padding-top: 2%;margin-left: 2%;overflow: hidden;}
+	#messageContent li{height: 30px;font-size: 1.1em;border-bottom: 1px dashed #D3D3D3;}
+	#messageContent li:hover{background-color: #F4F4F4;}
+	#messageContent a{float: left;display: inline;text-decoration: none;line-height: 30px;color: #000000;}
+	#messageContent a:link{color: #000000;}
+	#messageContent a:visited{color: #B7B7B7;}
+	#messageContent a:hover{color: red;}
+	#messageContent li span{float: right;margin-right: 20px;font-size: 0.8em;line-height: 30px;}
+
+#page{text-align: center;}
+	#page ul{list-style: none;background-color: #F4F4F4;margin-left: 30%;}
+	#page ul li{float: left;height: 25px;background-color: #BABABA;cursor: pointer;border-radius: 5px;margin-left: 10px;}
+	#page ul li:hover{background-color: #999999;}
+	.first_end{width: 40px;}
+	.front_next{width: 60px;}
