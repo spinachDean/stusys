@@ -6,6 +6,6 @@
 
 <mapper namespace="cn.hbu.stusys.dao.StudentDAO">
 <select id="getAllStudentInfo" resultType="Student">
-select id,name,phone,clazz,year,college from v_stuinfo;
+select id,name,phone,clazz,year,college from v_stuinfo order by id
 </select>
 </mapper>
