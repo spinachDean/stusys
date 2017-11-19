@@ -37,7 +37,8 @@
 			</list>
 		</property>
 	</bean>
-
+	<!-- 开启对静态资源的访问 -->
+	<mvc:default-servlet-handler/>
 
 	<!-- 注解驱动 json -->
 	<mvc:annotation-driven>

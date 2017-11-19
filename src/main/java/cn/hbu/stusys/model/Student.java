@@ -2,19 +2,20 @@ package cn.hbu.stusys.model;
 
 /**
  * @author chensiming
- *学生信息的实体类，用于查询、创建、修改学生信息
+ *学生基本信息的实体类，用于查询、创建、修改学生基本信息
  */
 public class Student {
 	
 	private String id;//学号
 	private String name;//姓名
+	private String sex;
 	private String phone;//电话
 	private String clazz;//班级名称 由于class是关键字需要用clazz
 	private int classId;//班级id，方便插入和删除时的操作。
 	private int year;//年级，由班级定义
 	private String college;//学院名
 	private int collegeID;//学院id，方便插入和删除时的操作。
-	//以上为基本信息
+
 	
 	
 	public String getId() {
@@ -66,6 +67,12 @@ public class Student {
 		this.collegeID = collegeID;
 	}
 	
+	public String getSex() {
+		return sex;
+	}
+	public void setSex(String sex) {
+		this.sex = sex;
+	}
 	
 	
 	@Override

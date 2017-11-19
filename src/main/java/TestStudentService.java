@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.github.pagehelper.PageInfo;
 
 import cn.hbu.stusys.model.Student;
+import cn.hbu.stusys.model.StudentDetail;
 import cn.hbu.stusys.service.IAdminService;
 import cn.hbu.stusys.service.IStudentService;
 
@@ -16,8 +17,8 @@ public class TestStudentService {
 		final String xmlpath = "bean.xml";
 		ApplicationContext context = new ClassPathXmlApplicationContext(xmlpath);	
 		IStudentService studentService=context.getBean(IStudentService.class);
-		PageInfo<Student> result=studentService.getStudentInfoByPage(1,10);
-		
+		StudentDetail result=studentService.getStudentDetailInfo("20151101029");
+		System.out.println(result.toString());
 	
 	}
 }

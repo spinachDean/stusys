@@ -3,6 +3,7 @@ package cn.hbu.stusys.service;
 import java.util.List;
 
 import cn.hbu.stusys.model.Student;
+import cn.hbu.stusys.model.StudentDetail;
 
 import com.github.pagehelper.PageInfo;
 
@@ -23,4 +24,10 @@ public interface IStudentService {
 	 * @return
 	 */
 	public PageInfo<Student> getStudentInfoByPage(Integer pageNo,Integer pageSize);
+	/**
+	 * 通过学号获取学生详细信息
+	 * @param id
+	 * @return
+	 */
+	public StudentDetail getStudentDetailInfo(String id);
 }

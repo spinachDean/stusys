@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import cn.hbu.stusys.model.Student;
+import cn.hbu.stusys.model.StudentDetail;
 
 /**
  * @author chensiming
@@ -19,5 +20,10 @@ public interface StudentDAO {
 	 * @return 学生信息的列表
 	 */
 	public List<Student> getAllStudentInfo();
-	
+	/**
+	 * 通过学生学号获取学生详细信息
+	 * @param id
+	 * @return 只返回一个信息
+	 */
+	public StudentDetail getStudentDetailInfo(String id);
 }

@@ -8,4 +8,7 @@
 <select id="getAllStudentInfo" resultType="Student">
 select id,name,phone,clazz,year,college from v_stuinfo order by id
 </select>
+<select id="getStudentDetailInfo" resultType="StudentDetail">
+select * from v_studetil where id=#{id}
+</select>
 </mapper>
