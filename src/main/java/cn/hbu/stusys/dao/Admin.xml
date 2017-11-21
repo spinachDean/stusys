@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hbu.stusys.dao.AdminDAO">
+	<insert id="batchInsertStudents">
+		insert into stu_user values
+		<foreach collection="ids" item="id" index="i" separator=",">
+			(
+			#{id},#{password}
+			)
+		</foreach>
+	</insert>
+</mapper>

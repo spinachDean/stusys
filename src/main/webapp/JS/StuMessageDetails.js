@@ -5,10 +5,10 @@ function edit(){
 		$("#edit_modal").show();
 	})
 	$("#modal_content img").mouseover(function(){
-		$(this).attr("src","../images/shutUp_dark.png");
+		$(this).attr("src","images/shutUp_dark.png");
 	})
 	$("#modal_content img").mouseout(function(){
-		$(this).attr("src","../images/shutUp_light.png");
+		$(this).attr("src","images/shutUp_light.png");
 	})
 	$("#modal_content img").click(function(){
 		if(confirm("是否退出此窗口"+"\n"+ "退出后将删除已输入内容")){

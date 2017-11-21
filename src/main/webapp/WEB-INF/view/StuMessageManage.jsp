@@ -46,12 +46,12 @@
 				</tr>
 				<c:forEach items="${info}" var="j">
 				<tr>
-					<td>${j.id}</td><td>${j.name}</td><td>${j.year}</td><td>${j.clazz}</td><td>${j.phone}</td><td><a href="StuMessageDetails.html"><img src="images/details.png"></a></td>
+					<td>${j.id}</td><td>${j.name}</td><td>${j.year}</td><td>${j.clazz}</td><td>${j.phone}</td><td><a href="admin/getDetails/${j.id}"><img src="images/details.png"></a></td>
 				</tr>
 				</c:forEach>
 			</table>
 		</div>
-</div>
+</div>	
 
 <script type="text/javascript" src="JS/jquery-3.2.0.min.js"></script>
 <script type="text/javascript" src="JS/load.js"></script>

@@ -28,8 +28,14 @@ public class StudentController {
 		request.setAttribute(StringConst.INFO,studentService.getAllStudentInfo());
 		return "/WEB-INF/view/StuMessageManage.jsp";
 	}
-	@GetMapping("/admin/getStudentDetail/{id}")
-	public String getStudentDetail(HttpServletRequest request,@PathVariable(value="id",required=true)String id)
+	/**
+	 * 根据ID查询学生详细信息 管理员才能进行的操作
+	 * @param request
+	 * @param id
+	 * @return
+	 */
+	@GetMapping("/admin/getDetails/{id}")
+	public String getStudentDetails(HttpServletRequest request,@PathVariable(value="id",required=true)String id)
 	{
 		request.setAttribute(StringConst.DETAIL,studentService.getStudentDetailInfo(id));
 		return "/WEB-INF/view/StuMessageDetails.jsp";

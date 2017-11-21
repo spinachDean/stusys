@@ -22,7 +22,8 @@ html{height: 100%;width: 100%;}
 #left_bar a{text-decoration: none;color: black;}
 
 /*StuMessageMange*/
-#content{height: 100%;width: 100%;position: absolute;background-color: #F4F4F4;border-left: 1px solid #CFCFCF;}
+#frameWork{height: 100%;}
+#content{height: 92%;width: 88%;position: absolute;right:0;top: 8%;left: 150px;background-color: #F4F4F4;border-left: 1px solid #CFCFCF;}
 #top-title{height: 20%;width: 95%;background-color: #FFFFFF;margin-top: 2%;margin-left: 2.5%;}
 	#top-title span{margin-left: 3%;font-size: 20px;font-family: 仿宋;padding-top: 1%;display: block;font-weight: bold;}
 	#top-title hr{border-top:5px solid #8EE5EE;margin-top: 1%;}
