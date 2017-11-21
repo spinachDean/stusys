@@ -93,10 +93,10 @@ CREATE TABLE `stu_user` (
 -- ----------------------------
 
 -- ----------------------------
--- View structure for `v_studetil`
+-- View structure for `v_studetail`
 -- ----------------------------
-DROP VIEW IF EXISTS `v_studetil`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_studetil` AS select `stu_info`.`infoID` AS `id`,`stu_info`.`name` AS `name`,`stu_info`.`phone` AS `phone`,`class`.`name` AS `clazz`,`class`.`year` AS `year`,`college`.`name` AS `college`,`stu_info`.`sex` AS `sex`,`stu_info`.`homeNumber` AS `homeNumber`,`stu_info`.`address` AS `address`,`stu_info`.`hornor` AS `hornor`,`stu_info`.`activity` AS `activity`,`stu_info`.`birthday` AS `birthday` from ((`college` join `class` on((`college`.`collegeID` = `class`.`collegeID`))) join `stu_info` on((`stu_info`.`classID` = `class`.`classID`))) ;
+DROP VIEW IF EXISTS `v_studetail`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_studetail` AS select `stu_info`.`infoID` AS `id`,`stu_info`.`name` AS `name`,`stu_info`.`phone` AS `phone`,`class`.`name` AS `clazz`,`class`.`year` AS `year`,`college`.`name` AS `college`,`stu_info`.`sex` AS `sex`,`stu_info`.`homeNumber` AS `homeNumber`,`stu_info`.`address` AS `address`,`stu_info`.`hornor` AS `hornor`,`stu_info`.`activity` AS `activity`,`stu_info`.`birthday` AS `birthday` from ((`college` join `class` on((`college`.`collegeID` = `class`.`collegeID`))) join `stu_info` on((`stu_info`.`classID` = `class`.`classID`))) ;
 
 -- ----------------------------
 -- View structure for `v_stuinfo`
