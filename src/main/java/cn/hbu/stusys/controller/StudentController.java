@@ -5,39 +5,35 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import cn.hbu.stusys.model.Student;
 import cn.hbu.stusys.service.IStudentService;
 import cn.hbu.stusys.util.StringConst;
 
 @Controller
+@RequestMapping("/student")
 public class StudentController {
-	/**
-	 * 学生信息分页管理
-	 * 权限：教学秘书、团委 (admin)
-	 * @return
-	 */
 	@Autowired
 	IStudentService studentService;
-	@GetMapping("/admin/manageInfo/{page}")
-	public String ge1tAllStudentInfo(HttpServletRequest request,@PathVariable("page")Integer page)
-	{
-		if(page==null)page=1;
-		request.setAttribute(StringConst.INFO,studentService.getAllStudentInfo());
-		return "/WEB-INF/view/StuMessageManage.jsp";
-	}
+
 	/**
-	 * 根据ID查询学生详细信息 管理员才能进行的操作
+	 * 查询自己的详细信息
 	 * @param request
 	 * @param id
 	 * @return
 	 */
-	@GetMapping("/admin/getDetails/{id}")
-	public String getStudentDetails(HttpServletRequest request,@PathVariable(value="id",required=true)String id)
+	@GetMapping("/getDetailInfo")
+	public String getStudentDetails(HttpServletRequest request)
 	{
-		request.setAttribute(StringConst.DETAIL,studentService.getStudentDetailInfo(id));
+		Student stu=(Student) request.getSession().getAttribute(StringConst.INFO);
+		request.setAttribute(StringConst.DETAIL,studentService.getStudentDetailInfo(stu.getId()));
 		return "/WEB-INF/view/StuMessageDetails.jsp";
+	}
+	@GetMapping("/login")
+	public @ResponseBody String loginStudent(HttpServletRequest request,String username,String password)
+	{
+		return "学生登录方法";
 	}
 }

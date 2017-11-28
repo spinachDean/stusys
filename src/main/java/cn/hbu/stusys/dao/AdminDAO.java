@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Param;
 public interface AdminDAO {
 	
 	/**
-	 * 可以批量插入学生账号和默认密码
+	 * 可以批量插入学生信息和默认密码
 	 * @param id
 	 * @param password
 	 * @return 成功插入的条数

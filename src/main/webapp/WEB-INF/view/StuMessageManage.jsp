@@ -5,6 +5,7 @@
 	String basePath = request.getScheme() + "://"
 			+ request.getServerName() + ":" + request.getServerPort()
 			+ path + "/";
+	
 %>
 <!DOCTYPE html>
 <html>
@@ -40,11 +41,12 @@
 			<input type="button" value="查询" class="find_btn" name="">
 		</div>
 		<div id="result" class="table-responsive">
+		<p>${info.size}</p>
 			<table class="table table-striped table-hover">
 				<tr>
 					<th>学号</th><th>姓名</th><th>年级</th><th>专业班级</th><th>联系电话</th><th>查看详情</th>
 				</tr>
-				<c:forEach items="${info}" var="j">
+				<c:forEach items="${info.list}" var="j">
 				<tr>
 					<td>${j.id}</td><td>${j.name}</td><td>${j.year}</td><td>${j.clazz}</td><td>${j.phone}</td><td><a href="admin/getDetails/${j.id}"><img src="images/details.png"></a></td>
 				</tr>

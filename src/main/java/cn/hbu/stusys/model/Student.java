@@ -11,10 +11,10 @@ public class Student {
 	private String sex;
 	private String phone;//电话
 	private String clazz;//班级名称 由于class是关键字需要用clazz
-	private int classId;//班级id，方便插入和删除时的操作。
-	private int year;//年级，由班级定义
+	private Integer classId;//班级id，方便插入和删除时的操作。
+	private Integer year;//年级，由班级定义
 	private String college;//学院名
-	private int collegeID;//学院id，方便插入和删除时的操作。
+	private Integer collegeID;//学院id，方便插入和删除时的操作。
 
 	
 	
@@ -42,10 +42,10 @@ public class Student {
 	public void setClazz(String clazz) {
 		this.clazz = clazz;
 	}
-	public int getYear() {
+	public Integer getYear() {
 		return year;
 	}
-	public void setYear(int year) {
+	public void setYear(Integer year) {
 		this.year = year;
 	}
 	public String getCollege() {
@@ -54,16 +54,16 @@ public class Student {
 	public void setCollege(String college) {
 		this.college = college;
 	}
-	public int getClassId() {
+	public Integer getClassId() {
 		return classId;
 	}
-	public void setClassId(int classId) {
+	public void setClassId(Integer classId) {
 		this.classId = classId;
 	}
-	public int getCollegeID() {
+	public Integer getCollegeID() {
 		return collegeID;
 	}
-	public void setCollegeID(int collegeID) {
+	public void setCollegeID(Integer collegeID) {
 		this.collegeID = collegeID;
 	}
 	

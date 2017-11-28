@@ -22,20 +22,7 @@ public class ImplStudentService implements IStudentService {
 	Logger logger=Logger.getLogger(this.getClass());
 	@Autowired
 	StudentDAO studentDAO;
-	public List<Student> getAllStudentInfo() {
-		// TODO 自动生成的方法存根
-		return studentDAO.getAllStudentInfo();
-	}
 
-	public synchronized PageInfo<Student> getStudentInfoByPage(Integer pageNo,
-			Integer pageSize) {
-		pageNo = pageNo == null?1:pageNo;
-	    pageSize = pageSize == null?10:pageSize;
-	    PageHelper.startPage(pageNo, pageSize);//启动分页插件
-	    List<Student> list=studentDAO.getAllStudentInfo();
-	    PageInfo<Student> page = new PageInfo<Student>(list);
-	    return page;
-	}
 
 	public StudentDetail getStudentDetailInfo(String id) {
 		if(id==null||id.equals("")||id.length()!=11){

@@ -5,10 +5,27 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.hbu.stusys.dao.StudentDAO">
-<select id="getAllStudentInfo" resultType="student">
-select id,name,phone,clazz,year,college from v_stuinfo order by id
-</select>
-<select id="getStudentDetailInfo" resultType="studentDetail">
-select * from v_studetail where id=#{id}
-</select>
+	<select id="getAllStudentInfo" resultType="student">
+		select id,name,phone,clazz,year,college from v_stuinfo
+		where 1=1  
+		<if test="stu != null">
+			<if test="stu.name!= null">
+				and name = #{stu.name}
+			</if>
+			<!-- 代码出错 -->
+			<if test="null !=stu.year">
+				and year =#{stu.year}
+			</if>
+			<if test="null !=stu.id">
+				and id = #{stu.id}
+			</if>
+			<if test="null != stu.clazz">
+				and clazz = #{stu.clazz}
+			</if>
+		</if>
+		order by id
+	</select>
+	<select id="getStudentDetailInfo" resultType="studentDetail">
+		select * from v_studetail where id=#{id}
+	</select>
 </mapper>

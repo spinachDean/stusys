@@ -46,6 +46,7 @@
 	<mappers>
 		<mapper resource="cn/hbu/stusys/dao/Student.xml" />
 		<mapper resource="cn/hbu/stusys/dao/Admin.xml" />
+		<mapper resource="cn/hbu/stusys/dao/Teacher.xml" />
 	</mappers>
 
 </configuration>
