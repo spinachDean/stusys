@@ -22,6 +22,7 @@
 	<!-- 导入data配置 -->
 	<import resource="classpath:bean-data.xml" />
 	<import resource="classpath:bean-redis.xml" />
+	
 	<!-- 用于将对象转换为 JSON -->
 	<bean id="stringConverter"
 		class="org.springframework.http.converter.StringHttpMessageConverter">
@@ -59,9 +60,7 @@
 	<!-- 启用缓存注解功能，这个是必须的，否则注解不会生效，另外，该注解一定要声明在spring主配置文件中才会生效 -->
 	<cache:annotation-driven cache-manager="cacheManager" />
 	<!-- 开启这个配置，spring才能识别@Scheduled注解 <task:annotation-driven scheduler="qbScheduler" 
-		mode="proxy"/> <task:scheduler id="qbScheduler" pool-size="10"/> <mvc:interceptors> 
-		<mvc:interceptor> <mvc:mapping path="/admin/**" /> <bean class="com.jktw.interceptor.LoginInterceptor"></bean> 
-		</mvc:interceptor> </mvc:interceptors> -->
+		mode="proxy"/> <task:scheduler id="qbScheduler" pool-size="10"/> -->
 
 	<!-- 多部分文件上传 <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"> 
 		<property name="maxUploadSize" value="104857600" /> <property name="maxInMemorySize" 

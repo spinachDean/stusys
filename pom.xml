@@ -11,13 +11,14 @@
 		<springframework.version>4.3.12.RELEASE</springframework.version>
 	</properties>
 	<dependencies>
-		<!-- http://blog.csdn.net/white_ice/article/details/61196417 https://www.cnblogs.com/DoubleEggs/p/6243216.html -->
+		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
+			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
@@ -105,17 +106,17 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.30</version>
 		</dependency>
-		  <!-- Redis 相关依赖 -->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
-            <version>1.7.2.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>2.8.1</version>
-        </dependency>
+		<!-- Redis 相关依赖 -->
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+			<version>1.7.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>2.8.1</version>
+		</dependency>
 		<!-- C3p0依赖 -->
 		<dependency>
 			<groupId>com.mchange</groupId>
@@ -148,7 +149,7 @@
 			<version>2.0</version>
 			<scope>provided</scope>
 		</dependency>
-		
+
 		<!-- 上传组件包 start -->
 		<dependency>
 			<groupId>commons-fileupload</groupId>
@@ -167,6 +168,7 @@
 		</dependency>
 	</dependencies>
 	<build>
+	<defaultGoal>compile</defaultGoal>
 		<finalName>stusys</finalName>
 	</build>
 </project>

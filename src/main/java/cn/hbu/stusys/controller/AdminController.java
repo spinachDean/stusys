@@ -1,12 +1,11 @@
 package cn.hbu.stusys.controller;
 
-import javax.servlet.Servlet;
+import java.util.concurrent.Callable;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,7 @@ import cn.hbu.stusys.service.IStudentService;
 import cn.hbu.stusys.util.StringConst;
 
 /**
- * 管理员控制层，所需要权限最高
+ * 管理员控制层，所需要权限最高,教学秘书和团委书记使用
  * @author chensiming
  *
  */
@@ -40,16 +39,26 @@ public class AdminController {
 	
 	/**
 	 * 跳转到管理员管理学生页面
+	 * 使用异步方法减少主线程的占用
 	 * @param request
 	 * @param page
 	 * @return
 	 */
 	@GetMapping("/manageInfo/{page}")
-	public String ge1tAllStudentInfo(HttpServletRequest request,@PathVariable("page")Integer page,Student student)
+	public Callable<String> ge1tAllStudentInfo(final HttpServletRequest request,@PathVariable("page") Integer page,final Student student)
 	{
-		if(page==null)page=1;
-		request.setAttribute(StringConst.INFO,adminService.getStudentInfoByPage(page,20,student));
-		return "/WEB-INF/view/StuMessageManage.jsp";
+		final int p;//临时的page
+		if(page==null) p=1;
+		else p=page;
+
+		return new Callable<String>() {
+			
+			public String call() throws Exception {
+				request.setAttribute(StringConst.INFO,adminService.getStudentInfoByPage(p,20,student));
+				return "/WEB-INF/view/StuMessageManage.jsp";
+			}
+		};
+		
 	}
 	/**
 	 * 根据ID查询学生详细信息 管理员才能进行的操作

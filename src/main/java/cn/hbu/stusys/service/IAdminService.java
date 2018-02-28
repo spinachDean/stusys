@@ -2,8 +2,8 @@ package cn.hbu.stusys.service;
 
 import java.util.List;
 
+import cn.hbu.stusys.model.Clazz;
 import cn.hbu.stusys.model.Student;
-import cn.hbu.stusys.model.StudentDetail;
 
 import com.github.pagehelper.PageInfo;
 
@@ -31,5 +31,17 @@ public interface IAdminService {
 	 */
 	public PageInfo<Student> getStudentInfoByPage(Integer pageNo,Integer pageSize,Student student);
 
+	/**
+	 * 由教学秘书为班级设置辅导员
+	 * @param username
+	 * @return
+	 */
+	public int updateClassesTeacher(String username,List<Integer> classes);
+	/**
+	 * 查询所有班级的信息
+	 * @param clazz
+	 * @return
+	 */
+	public List<Clazz> getClassesInfo(Clazz clazz);
 
 }

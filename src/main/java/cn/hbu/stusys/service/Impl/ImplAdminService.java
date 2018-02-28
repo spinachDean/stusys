@@ -6,15 +6,17 @@ import java.util.List;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import com.github.pagehelper.PageHelper;
-import com.github.pagehelper.PageInfo;
+import org.springframework.transaction.annotation.Transactional;
 
 import cn.hbu.stusys.dao.AdminDAO;
 import cn.hbu.stusys.dao.StudentDAO;
+import cn.hbu.stusys.model.Clazz;
 import cn.hbu.stusys.model.Student;
 import cn.hbu.stusys.service.IAdminService;
 import cn.hbu.stusys.util.MD5Util;
+
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 
 @Service
 public class ImplAdminService implements IAdminService {
@@ -23,7 +25,7 @@ public class ImplAdminService implements IAdminService {
 	AdminDAO adminDAO;
 	@Autowired
 	StudentDAO studentDAO;
-	
+	@Transactional
 	public int batchInsertStudents(String begin, String end, String password) {
 		Long first, last;
 		try {
@@ -50,7 +52,7 @@ public class ImplAdminService implements IAdminService {
 		// TODO 自动生成的方法存根
 		return studentDAO.getAllStudentInfo(stu);
 	}
-
+	
 	public synchronized PageInfo<Student> getStudentInfoByPage(Integer pageNo,
 			Integer pageSize,Student student) {
 		pageNo = pageNo == null?1:pageNo;
@@ -60,5 +62,17 @@ public class ImplAdminService implements IAdminService {
 	    PageInfo<Student> page = new PageInfo<Student>(list);
 	    return page;
 	}
+	@Transactional
+	public int updateClassesTeacher(String username,List<Integer> classes) {
+		
+		return adminDAO.updateClassesTeacher(username, classes);
+	}
+
+	public List<Clazz> getClassesInfo(Clazz clazz) {
+		// TODO 自动生成的方法存根
+		return adminDAO.getClassesInfo(clazz);
+	}
+
+
 
 }

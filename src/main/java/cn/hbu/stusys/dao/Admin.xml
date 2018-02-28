@@ -13,4 +13,29 @@
 			)
 		</foreach>
 	</insert>
+	<update id="updateClassesTeacher">
+		update class set teacher=#{username}
+		where classID in
+		<foreach collection="classes" item="class" separator="," open="("
+			close=")">
+			#{class}
+		</foreach>
+	</update>
+	<select id="getClassesInfo" resultType="clazz">
+		select c.name
+		name,classID,year,teacher,t.name,c.collegeID collegeID,co.name
+		collegeName
+		from class c,tea_user t,college co
+		where
+		c.teacher=t.username and c.collegeID=co.collegeID
+		<if test="clazz !=null">
+			<if test="clazz.year !=0">
+				and year=#{clazz.year}
+			</if>
+		</if>
+	</select>
+	<insert id="addClass" useGeneratedKeys="true" keyProperty="clazz.classID" parameterType="Clazz"> 
+    insert into class(name,year,collegeID,teacher) values
+    (#{clazz.name},#{clazz.year},#{clazz.collegeID},#{clazz.teacher})
+	</insert>
 </mapper>

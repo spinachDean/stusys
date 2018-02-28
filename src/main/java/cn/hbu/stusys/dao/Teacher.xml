@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.hbu.stusys.dao.TeacherDAO">
+	<!-- 一对多配置 开启autoMapping之后只需要配置id与属性名不是对应的列名即可 -->
+	<resultMap type="teacher" id="TeacherResultMap" autoMapping="true">
+		<id column="username" property="username" />
+		<collection property="menulist" column="menuID" ofType="menu"
+			autoMapping="true">
+			<id property="menuID" column="menuID" />
+		</collection>
+	</resultMap>
+
+	<select id="getTeacherInfo" resultMap="TeacherResultMap">
+		select * from v_teainfo
+		where username=#{username}
+	</select>
+	<select id="getPassword" resultType="java.lang.String">
+		select password from
+		tea_user where username=#{username}
+	</select>
+	<select id="getTeacherClasses" resultType="clazz">
+		select c.name name,classId,year,teacher,t.name,c.collegeID collegeID,co.name collegeName
+		from class c,tea_user t,college co
+		where c.teacher=t.username and c.collegeID=co.collegeID
+		and c.teacher=#{username}
+		
+	</select>
+</mapper>
